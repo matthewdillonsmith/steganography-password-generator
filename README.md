@@ -46,14 +46,9 @@ Welcome to the Steganography Password Generator! This Python application allows 
    pip install -r requirements.txt
    ```
 
-   **Alternatively**, you can install the dependencies individually:
-   ```bash
-   pip install Pillow cryptography pyperclip
-   ```
-
 4. **Run the Application**
    ```bash
-   python steganography_app.py
+   python steno-password.py
    ```
 
 ## Usage
