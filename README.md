@@ -1,7 +1,7 @@
 
 # Steganography Password Generator
 
-Welcome to the **Steganography Password Generator**! This Python application allows users to generate highly secure passwords by embedding them into images using steganography techniques. Users can use any image of their choice to create password/key pairs, enhancing the security and uniqueness of their passwords.
+Welcome to the **Steganography Password Generator**! This Python application allows users to generate highly secure passwords by embedding them into images using steganography techniques. Users can use any image of their choice to create password/key pairs, enhancing the security and uniqueness of their passwords. The application uses **AES-256** encryption to ensure the highest level of security for the embedded passwords.
 
 ## Table of Contents
 - [Features](#features)
@@ -16,6 +16,7 @@ Welcome to the **Steganography Password Generator**! This Python application all
 ## Features
 - **Generate Secure Passwords**: Creates strong, random passwords combining letters, numbers, and special characters.
 - **Embed Passwords into Images**: Uses steganography to embed encrypted passwords into user-selected images.
+- **AES-256 Encryption**: Ensures the highest level of security by encrypting passwords with AES-256.
 - **Extract Passwords from Images**: Retrieves and decrypts passwords embedded within images.
 - **Key Management**: Allows users to create new encryption keys and load existing ones for password encryption and decryption.
 - **User-Friendly Interface**: Provides an intuitive GUI using Tkinter for easy interaction.
@@ -44,7 +45,7 @@ Follow these steps to get a copy of the project up and running on your local mac
 2. **Create a Virtual Environment (Optional but Recommended)**
    ```bash
    python3 -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   source venv/bin/activate  # On Windows use `venv\Scriptsctivate`
    ```
 
 3. **Install Dependencies**
