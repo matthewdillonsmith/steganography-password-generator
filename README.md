@@ -72,15 +72,15 @@ Please feel free to tear this apart; any critisim is welcome! Follow these steps
 1. **Fork the Project**
 2. **Create your Feature Branch**
    ```bash
-   git checkout -b feature/AmazingFeature
+   git checkout -b feature/<some-new-feature>
    ```
 3. **Commit your Changes**
    ```bash
-   git commit -m 'Add some AmazingFeature'
+   git commit -m 'Add <some-new-feature>'
    ```
 4. **Push to the Branch**
    ```bash
-   git push origin feature/AmazingFeature
+   git push origin feature/<some-new-feature>
    ```
 5. **Open a Pull Request**
 
