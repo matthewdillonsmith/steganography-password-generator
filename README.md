@@ -1,41 +1,34 @@
 
-# Steganography Password Generator
+# Stenography Password Generator
 
-Welcome to the **Steganography Password Generator**! This Python application allows users to generate highly secure passwords by embedding them into images using steganography techniques. Users can use any image of their choice to create password/key pairs, enhancing the security and uniqueness of their passwords. The application uses **AES-256** encryption to ensure the highest level of security for the embedded passwords.
+## Overview
+Welcome to the Steganography Password Generator! This Python application allows users to generate highly secure passwords by embedding them into images using steganography techniques. Users can use any image of their choice to create embedded image/key pairs, enhancing the security and uniqueness of their passwords. The application uses AES-256 encryption to ensure the highest level of security for the embedded passwords.
 
-## Table of Contents
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
+## How the App Works
+1. **Select Image**: Users start by selecting an image (only tested with PNG format at this time...) where the password will be embedded.
+2. **Generate Password/Key/Embedded Image**: The app generates a random password, encrypts it using AES encryption, and embeds the encrypted data into the selected image. The user is prompted to save the output image and the corresponding key file.
+3. **Extract Password**: Users can select an image with embedded data and the corresponding key file to extract and decrypt the embedded password.
 
 ## Features
-- **Generate Secure Passwords**: Creates strong, random passwords combining letters, numbers, and special characters.
-- **Embed Passwords into Images**: Uses steganography to embed encrypted passwords into user-selected images.
-- **AES-256 Encryption**: Ensures the highest level of security by encrypting passwords with AES-256.
-- **Extract Passwords from Images**: Retrieves and decrypts passwords embedded within images.
-- **Key Management**: Allows users to create new encryption keys and load existing ones for password encryption and decryption.
-- **User-Friendly Interface**: Provides an intuitive GUI using Tkinter for easy interaction.
-- **Copy to Clipboard**: Enables quick copying of generated or extracted passwords to the clipboard.
+- **Password Generation**: Generates a 16-character password consisting of letters, digits, and punctuation.
+- **AES Encryption**: The password is encrypted using AES-256 encryption with GCM mode for security.
+- **Data Embedding**: The encrypted password is embedded into the image using the least significant bit (LSB) technique.
+- **Password Extraction**: Allows users to extract and decrypt the password from an image using the corresponding key file.
 
-## Prerequisites
-Before you begin, ensure you have met the following requirements:
-- **Operating System**: Windows, macOS, or Linux
-- **Python Version**: Python 3.6 or higher
-- **Dependencies**:
-  - [tkinter](https://docs.python.org/3/library/tkinter.html)
-  - [Pillow](https://pypi.org/project/Pillow/)
-  - [cryptography](https://pypi.org/project/cryptography/)
-  - [pyperclip](https://pypi.org/project/pyperclip/)
+## Constraints & Limitations
+1. **Image Size**: Ensure that the image selected for embedding the password is large enough to store the encrypted data. If the image is too small, the process will fail.
+2. **File Format**: Only PNG images are supported for embedding and extracting the password.
+3. **Key File**: The key file generated during the embedding process is essential for password extraction. Losing this file will make it impossible to decrypt the password.
+4. **Data Integrity**: Any modification to the image with embedded data or the key file after the embedding process may result in unsuccessful password extraction or decryption.
+5. **Security**: While AES encryption is strong, users should still manage their key files securely to prevent unauthorized access.
+
+## Requirements
+- Python 3.x
+- Tkinter (included with standard Python installations)
+- PIL (Pillow) library
+- cryptography library
 
 ## Installation
-
-Follow these steps to get a copy of the project up and running on your local machine.
-
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/matthewdillonsmith/steganography-password-generator.git
@@ -64,40 +57,17 @@ Follow these steps to get a copy of the project up and running on your local mac
    ```
 
 ## Usage
+1. Open the application.
+2. Select an image using the **Select Image** button. <b>NOTE:</b> <i>At this time, this app has only been tested with `.png` images.</i></b>
+3. Click **Generate Password/Key/Embedded Image** to generate and embed a password.
+4. Save the output image and the key file.
+5. To extract the password, click **Extract Password**, and provide the matching embedded image and key files. <i>This will work even if you close out of the app and want to do this at a later time.</i>
 
-1. **Load/Create Encryption Key**
-   - Click on **"Load Encryption Key"** to load an existing `.key` file.
-   - Click on **"Save New Encryption Key"** to generate and save a new encryption key.
-
-2. **Select Image**
-   - Click on **"Select Image"** and choose a `.png` image file to embed or extract the password.
-
-3. **Generate and Embed Password**
-   - Click on **"Generate and Embed Password"** to create a new password, encrypt it, and embed it into the selected image.
-   - Save the output image when prompted.
-
-4. **Extract Password**
-   - Click on **"Extract Password"** to retrieve and decrypt the password from the selected image.
-
-5. **Copy to Clipboard**
-   - After generating or extracting a password, click on **"Copy to Clipboard"** to copy the password for easy use.
-
-## Screenshots
-
-### Main Interface
-![Main Interface](screenshots/main_interface.png)
-
-### Password Generated and Embedded
-![Password Embedded](screenshots/password_embedded.png)
-
-### Password Extracted
-![Password Extracted](screenshots/password_extracted.png)
-
-*Note: Ensure you have a `screenshots` folder in your project directory with the above images.*
+## License
+Not sure how the licensing stuff works yet, but I will add this later.
 
 ## Contributing
-
-Contributions are welcome! Follow these steps to contribute:
+Please feel free to tear this apart; any critisim is welcome! Follow these steps to contribute:
 
 1. **Fork the Project**
 2. **Create your Feature Branch**
@@ -114,32 +84,6 @@ Contributions are welcome! Follow these steps to contribute:
    ```
 5. **Open a Pull Request**
 
-## License
+## Contact
+For any inquiries or issues, please reach out via [GitHub Issues](https://github.com/matthewdillonsmith/stenography-password-generator/issues).
 
-This project is licensed under the [MIT License](LICENSE).
-
-## Acknowledgements
-
-- [Python Software Foundation](https://www.python.org/)
-- [Pillow Library](https://python-pillow.org/)
-- [Cryptography Library](https://cryptography.io/)
-- [Pyperclip Library](https://github.com/asweigart/pyperclip)
-- [Tkinter GUI Library](https://docs.python.org/3/library/tkinter.html)
-
-# Contact
-
-**Matthew Dillon Smith**
-- [GitHub](https://github.com/matthewdillonsmith)
-- [Email](mailto:youremail@example.com)
-
-Feel free to reach out for any questions or suggestions!
-
-# Additional Notes
-
-- Ensure that you handle your encryption keys securely. Do not share them publicly or commit them to version control.
-- This application currently supports `.png` images for embedding and extracting passwords. Support for other image formats can be added in future updates.
-- Always use high-resolution images for better steganography results.
-
----
-
-Thank you for using the Steganography Password Generator! If you find this project helpful, please give it a star ⭐ on GitHub.
