@@ -45,7 +45,7 @@ Follow these steps to get a copy of the project up and running on your local mac
 2. **Create a Virtual Environment (Optional but Recommended)**
    ```bash
    python3 -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scriptsctivate`
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    ```
 
 3. **Install Dependencies**
