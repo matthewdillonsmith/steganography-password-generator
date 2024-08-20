@@ -55,7 +55,7 @@ Welcome to the Steganography Password Generator! This Python application allows 
 1. Open the application.
 2. Select an image using the **Select Image** button. <b>NOTE:</b> <i>At this time, this app has only been tested with `.png` images.</i></b>
 3. Click **Generate Password/Key/Embedded Image** to generate and embed a password.
-4. Save the output image and the key file.
+4. Save the output image and the key file with the filename of your choosing. <b>NOTE:</b> <i>This will dump the matching `.key` and embedded `.png` files into your current directory.</i>
 5. To extract the password, click **Extract Password**, and provide the matching embedded image and key files. <i>This will work even if you close out of the app and want to do this at a later time.</i>
 
 ## License
